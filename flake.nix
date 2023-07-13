@@ -1,7 +1,6 @@
 {
   description = "Dotfiles Nix Waayway";
 
-
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     home-manager = {
