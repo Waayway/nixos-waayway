@@ -1,4 +1,4 @@
 #!/bin/sh
 
-nix build .#homeManagerConfigurations.waayway.activationPackage
+nix build path:.#homeManagerConfigurations.waayway.activationPackage
 ./result/activate
