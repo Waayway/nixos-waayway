@@ -7,9 +7,13 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixos-generators = {
+      url = "github:nix-community/nixos-generators";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, nixos-generators, ... }:
     let
       system = "x86_64-linux";
 
@@ -46,6 +50,7 @@
             ./system/fonts.nix
             ./system/power-management.nix
             ./system/systemPackages.nix
+            ./system/disk-management.nix
 
             # Programs
             ./programs/docker.nix
@@ -59,7 +64,6 @@
               # * Networking
               networking.hostName = "wlaptop";
               networking.networkmanager.enable = true;
-
 
               # * User Setup
               users.users.waayway = {

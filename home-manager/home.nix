@@ -19,6 +19,27 @@
     gh
     neofetch
     filezilla
+    nextcloud-client
+    calibre
+
+    ## Development
+    # * Rust
+    rustc
+    cargo
+
+    # * JS/TS
+    nodejs_20
+
+    # * Go
+    go
+    gopls
+
+    # * Python
+    python312
+
+    # * Nixos iso generation
+    nixos-generators
+    popsicle
   ];
 
   gtk = {
@@ -39,6 +60,12 @@
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
     };
+  };
+
+  # Qt
+  qt = {
+    enable = true;
+    platformTheme = "gtk";
   };
 
   home.stateVersion = "23.05";
