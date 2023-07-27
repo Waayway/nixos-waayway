@@ -1,6 +1,12 @@
 { config, pkgs, ... }:
 
 {
+  imports = [
+    ./hardware-configuration.nix
+    ./boot.nix
+    ./drivers
+    ./programs
+  ];
   environment.systemPackages = with pkgs;
     [
       neovim
@@ -27,6 +33,7 @@
       swww
       hyprpicker
       pamixer
+      jq
       # Screenshots
       grim
       slurp

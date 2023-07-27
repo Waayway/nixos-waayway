@@ -30,33 +30,18 @@
         waayway = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
-            ./home-manager/home.nix
-            ./programs/zsh.nix
+            ./home
           ];
         };
       };
 
       nixosConfigurations = {
-        wlaptop = lib.nixosSystem {
+        config = lib.nixosSystem {
           inherit system;
 
           modules = [
             # System stuff
-            ./system/hardware-configuration.nix
-            ./system/boot.nix
-            ./system/amdgpu.nix
-            ./system/audio.nix
-            ./system/bluetooth.nix
-            ./system/fonts.nix
-            ./system/power-management.nix
-            ./system/systemPackages.nix
-            ./system/disk-management.nix
-
-            # Programs
-            ./programs/docker.nix
-            ./programs/flatpak.nix
-            ./programs/gnome-polkit.nix
-            ./programs/hyprland.nix
+            ./system
             {
               # * Some Setup for flakes
               nix.settings.experimental-features = [ "nix-command" "flakes" ];

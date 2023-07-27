@@ -1,0 +1,86 @@
+# * Sway Config file
+### Variables
+# Use Super
+set $mod Mod4
+
+# Your preferred Applications
+set $term kitty
+set $menu nwg-drawer | xargs swaymsg exec --
+set $wallpaper ~/.config/dotfiles/wallpapers/wallhaven-j3m8y5_2560x1440.png
+
+### Ouput Config
+#
+# Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
+output * bg $wallpaper fill
+
+### Key bindings
+# * Program
+# Start a terminal
+bindsym $mod+Return exec $term
+bindsym $mod+t exec thunar
+bindsym $mod+c exec sh ~/.config/hypr/open-vscode.sh
+bindsym $mod+b exec brave
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start your launcher
+bindsym $mod+Space exec $menu
+
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+L exec killall wlogout || wlogout -b 2
+#
+# Moving around:
+#
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+#
+# Workspaces:
+#
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+v floating toggle
+#
+# Status Bar:
+#
+bar {
+    swaybar_command waybar
+}
+
+# Change border
+font pango:monospace 0
+titlebar_padding 1
+titlebar_border_thickness 0
+
+include /etc/sway/config.d/*

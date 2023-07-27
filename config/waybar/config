@@ -4,6 +4,7 @@
 	"position": "top",
 	"modules-left": [
 		"wlr/workspaces",
+		"sway/workspaces",
 		"custom/right-arrow-dark"
 	],
 	"modules-center": [
@@ -55,6 +56,11 @@
 	"wlr/workspaces": {
 		"format": "{name}",
 		"on-click": "activate",
+		"disable-scroll": true,
+		"all-outputs": true
+	},
+	"sway/workspaces": {
+		"format": "{name}",
 		"disable-scroll": true,
 		"all-outputs": true
 	},

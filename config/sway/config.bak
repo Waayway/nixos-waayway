@@ -1,0 +1,24 @@
+# Sway Config
+
+# Set settings
+set $mod Mod4
+set $term kitty
+set $wallpaper ~/.config/dotfiles/wallpapers/wallhaven-j3m8y5_2560x1440.png
+# Auto Start programs
+
+exec swww init
+exec swww img $wallpaper
+
+exec nwg-drawer -resize
+
+exec swayosd
+
+bar {
+    swaybar_command waybar
+}
+# Launch programs
+bindsym $mod+Return exec $term
+
+# Keybindings
+bindsym $mod+Q kill
+bindsym $mod+f fullscreen
