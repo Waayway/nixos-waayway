@@ -18,28 +18,51 @@ Thank the heavens for Wil T for his youtube series on nixos and flakes without i
 
 ## Some images
 
-![](./images/mainDesktop.png)
-![](./images/neofetch.png)
-![](./images/editing.png)
+![](./images/out.png)
 
 ## How to install
 
-Enable nix and flakes in configuration.nix with
+The default install of nixos doesn't have flakes enabled so you need to enable it within configuration.nix
+
+```bash
+sudo nano /etc/nixos/configuration.nix # to open the file
+```
+
+then add this line to the file within the {}
 
 ```nix
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
-Then run
+then run
 
 ```bash
 sudo nixos-rebuild switch
 ```
 
-Then run
+Nixos also doesn't have git nor just installed so install it temporarily using nix-shell -p
 
 ```bash
-./install.sh
+nix-shell -p git just
 ```
 
-within this repo
+then clone this repo
+
+```bash
+git clone https://github.com/Waayway/nixos-waayway
+```
+
+then cd into the repo
+
+```bash
+cd nixos-waayway
+```
+
+then run
+just install will copy config files and compile the flake for both the home-manager and the system
+
+```bash
+just install
+```
+
+then reboot and you should be good to go

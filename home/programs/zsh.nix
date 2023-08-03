@@ -27,6 +27,12 @@
         file = "zsh-syntax-highlighting.zsh";
       }
     ];
+    initExtra = ''
+      bindkey "^[[1;5C" forward-word
+      bindkey "^[[1;5D" backward-word
+
+      export PATH="$HOME/.local/bin :$PATH"
+    '';
   };
   programs.starship = {
     enable = true;

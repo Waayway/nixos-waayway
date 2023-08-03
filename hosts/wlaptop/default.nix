@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./audio.nix
-    ./disk-management.nix
+    ./hardware-configuration.nix
   ];
 }

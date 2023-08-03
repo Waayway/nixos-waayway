@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Copy template to current working directory
+cp -r $HOME/code/docker-templates/$1/* $PWD

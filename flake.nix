@@ -24,6 +24,7 @@
 
       lib = nixpkgs.lib;
 
+      nixosSystem = import ./lib/nixosSystem.nix;
     in
     {
       homeManagerConfigurations = {
@@ -36,60 +37,16 @@
       };
 
       nixosConfigurations = {
-        config = lib.nixosSystem {
-          inherit system;
-
-          modules = [
-            # System stuff
-            ./system
-            {
-              # * Some Setup for flakes
-              nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-              # * Networking
-              networking.hostName = "wlaptop";
-              networking.networkmanager.enable = true;
-
-              # * User Setup
-              users.users.waayway = {
-                isNormalUser = true;
-                description = "Thijs van Waaij";
-                extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
-              };
-
-              users.defaultUserShell = pkgs.zsh;
-              programs.zsh.enable = true;
-              environment.shells = with pkgs; [ zsh ];
-
-              # * Timezones and keyboard layouts
-              # Set your time zone.
-              time.timeZone = "Europe/Amsterdam";
-
-              # Select internationalisation properties.
-              i18n.defaultLocale = "en_US.UTF-8";
-
-              i18n.extraLocaleSettings = {
-                LC_ADDRESS = "nl_NL.UTF-8";
-                LC_IDENTIFICATION = "nl_NL.UTF-8";
-                LC_MEASUREMENT = "nl_NL.UTF-8";
-                LC_MONETARY = "nl_NL.UTF-8";
-                LC_NAME = "nl_NL.UTF-8";
-                LC_NUMERIC = "nl_NL.UTF-8";
-                LC_PAPER = "nl_NL.UTF-8";
-                LC_TELEPHONE = "nl_NL.UTF-8";
-                LC_TIME = "nl_NL.UTF-8";
-              };
-
-              # Configure keymap in X11 and wayland apperantly
-              services.xserver = {
-                layout = "us";
-                xkbVariant = "euro";
-              };
-
-              # Set system version
-              system.stateVersion = "23.05";
-            }
-          ];
+        wlaptop = nixosSystem "wlaptop" {
+          inherit nixpkgs;
+          system = "x86_64-linux";
+          user = "waayway";
+          fullname = "Thijs van Waaij";
+        };
+        wpc = nixosSystem {
+          system = "x86_64-linux";
+          user = "waayway";
+          fullname = "Thijs van Waaij";
         };
       };
     };

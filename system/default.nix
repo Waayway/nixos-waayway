@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ./boot.nix
     ./drivers
     ./programs
@@ -34,6 +33,7 @@
       hyprpicker
       pamixer
       jq
+      networkmanagerapplet
       # Screenshots
       grim
       slurp

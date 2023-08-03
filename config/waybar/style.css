@@ -1,21 +1,23 @@
 * {
-	font-size: 20px;
-	font-family: monospace;
+    font-size: 20px;
+    font-family: monospace;
 }
 
 window#waybar {
-	background: #292b2e;
-	color: #fdf6e3;
+    background: #1e1e2e;
+    color: #cdd6f4;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
-	color: #1a1a1a;
+    font-size: 24px;
+    color: #181825;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-	color: #292b2e;
-	background: #1a1a1a;
+    color: #1e1e2e;
+    font-size: 24px;
+    background: #181825;
 }
 
 #workspaces,
@@ -28,39 +30,72 @@ window#waybar {
 #battery,
 #disk,
 #tray {
-	background: #1a1a1a;
-}
-#tray * {
-	padding: 0 10px;
+    background: #181825;
 }
 
-#workspaces button {
-	padding: 0 2px;
-	color: #fdf6e3;
+#tray * {
+    padding: 0 10px;
 }
+
+#workspaces {
+    border: solid 0px #cdd6f4;
+    font-weight: normal;
+    font-style: normal;
+}
+#workspaces button {
+    padding: 0px 5px;
+    margin: 0px 3px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 16px;
+    background-color: #2f354a;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: #6c7086;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: #6c7086;
+    border-radius: 16px;
+    min-width: 50px;
+    background-size: 400% 400%;
+}
+
+/* #workspaces button {
+    padding: 0 5px;
+    margin: 0 5px;
+    background-color: blue;
+    color: #cdd6f4;
+} 
+#workspaces button.active,
 #workspaces button.focused {
-	color: #268bd2;
+    color: #268bd2;
 }
 #workspaces button:hover {
-	background: #1a1a1a;
-	border: #1a1a1a;
-	/* padding: 0 3px; */
-}
+    background: #181825;
+    border: #181825;
+} */
 
 #pulseaudio {
-	color: #268bd2;
+    color: #268bd2;
 }
 #memory {
-	color: #2aa198;
+    color: #2aa198;
 }
 #cpu {
-	color: #6c71c4;
+    color: #6c71c4;
 }
 #battery {
-	color: #859900;
+    color: #859900;
 }
 #disk {
-	color: #b58900;
+    color: #b58900;
 }
 
 #clock,
@@ -69,5 +104,5 @@ window#waybar {
 #cpu,
 #battery,
 #disk {
-	padding: 0 10px;
+    padding: 0 10px;
 }

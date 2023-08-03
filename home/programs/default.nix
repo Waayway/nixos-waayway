@@ -22,6 +22,9 @@
     filezilla
     nextcloud-client
     calibre
+    gimp
+    imagemagick
+    rclone
 
     ## Development
     # * Rust
