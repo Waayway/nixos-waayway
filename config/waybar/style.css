@@ -1,36 +1,36 @@
+@import "mocha.css";
+
 * {
     font-size: 20px;
     font-family: monospace;
 }
 
 window#waybar {
-    background: #1e1e2e;
-    color: #cdd6f4;
+    background: @base;
+    color: @text;
 }
 
 #custom-right-arrow-dark,
 #custom-left-arrow-dark {
     font-size: 24px;
-    color: #181825;
+    color: @mantle;
 }
 #custom-right-arrow-light,
 #custom-left-arrow-light {
-    color: #1e1e2e;
+    color: @base;
     font-size: 24px;
-    background: #181825;
+    background: @mantle;
 }
 
 #workspaces,
-#clock.1,
-#clock.2,
-#clock.3,
+#clock,
 #pulseaudio,
 #memory,
 #cpu,
 #battery,
 #disk,
 #tray {
-    background: #181825;
+    background: @mantle;
 }
 
 #tray * {
@@ -38,7 +38,7 @@ window#waybar {
 }
 
 #workspaces {
-    border: solid 0px #cdd6f4;
+    border: solid 0px @text;
     font-weight: normal;
     font-style: normal;
 }
@@ -48,54 +48,32 @@ window#waybar {
     margin-top: 5px;
     margin-bottom: 5px;
     border-radius: 16px;
-    background-color: #2f354a;
+    background-color: @surface0;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: #6c7086;
+    background-color: @surface1;
     border-radius: 16px;
-    min-width: 50px;
+    min-width: 40px;
     background-size: 400% 400%;
     transition: all 0.3s ease-in-out;
 }
 
-#workspaces button:hover {
-    background-color: #6c7086;
-    border-radius: 16px;
-    min-width: 50px;
-    background-size: 400% 400%;
-}
-
-/* #workspaces button {
-    padding: 0 5px;
-    margin: 0 5px;
-    background-color: blue;
-    color: #cdd6f4;
-} 
-#workspaces button.active,
-#workspaces button.focused {
-    color: #268bd2;
-}
-#workspaces button:hover {
-    background: #181825;
-    border: #181825;
-} */
-
 #pulseaudio {
-    color: #268bd2;
+    color: @blue;
 }
 #memory {
-    color: #2aa198;
+    color: @green;
 }
 #cpu {
-    color: #6c71c4;
+    color: @sapphire;
 }
 #battery {
-    color: #859900;
+    color: @green;
 }
 #disk {
-    color: #b58900;
+    color: @peach;
 }
 
 #clock,

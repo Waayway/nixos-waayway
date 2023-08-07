@@ -57,7 +57,8 @@
 		"format": "{name}",
 		"on-click": "activate",
 		"disable-scroll": true,
-		"all-outputs": true
+		"all-outputs": true,
+		"sort-by-number": true
 	},
 	"sway/workspaces": {
 		"format": "{name}",
@@ -121,5 +122,5 @@
 	},
 	"tray": {
 		"icon-size": 20
-	}
+	},
 }

@@ -25,6 +25,7 @@
     gimp
     imagemagick
     rclone
+    gnome.gnome-calculator
 
     ## Development
     # * Rust
