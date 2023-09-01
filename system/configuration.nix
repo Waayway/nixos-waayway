@@ -14,7 +14,7 @@ in
   users.users."${user}" = {
     isNormalUser = true;
     description = fullname;
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker" "libvirtd" ];
   };
 
   users.defaultUserShell = pkgs.zsh;

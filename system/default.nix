@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
   imports = [
     ./boot.nix
     ./drivers
@@ -16,7 +17,6 @@
       wl-clipboard
       zsh
       starship
-      xfce.thunar
       themechanger
       killall
       htop
@@ -28,7 +28,7 @@
       (waybar.overrideAttrs (oldAttrs: {
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       }))
-      dunst
+      swaynotificationcenter
       swww
       hyprpicker
       pamixer
@@ -45,6 +45,10 @@
       # Bluetooth
       blueberry
 
+      # Develop stuff
       docker-compose
+      gcc
+      pkg-config
+      unzip
     ];
 }

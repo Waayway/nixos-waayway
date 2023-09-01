@@ -10,7 +10,7 @@ Thank the heavens for Wil T for his youtube series on nixos and flakes without i
 
 -   Hyprland
 -   Waybar
--   dunst
+-   SwayNotificationCenter
 -   swww
 -   hyprpicker
 -   nwg-drawer

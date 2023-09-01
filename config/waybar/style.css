@@ -2,7 +2,7 @@
 
 * {
     font-size: 20px;
-    font-family: monospace;
+    font-family: "JetBrainsMonoNL NF";
 }
 
 window#waybar {
@@ -41,6 +41,9 @@ window#waybar {
     border: solid 0px @text;
     font-weight: normal;
     font-style: normal;
+}
+#workspaces * {
+    font-family: "JetBrainsMonoNL NFM";
 }
 #workspaces button {
     padding: 0px 5px;
@@ -83,4 +86,10 @@ window#waybar {
 #battery,
 #disk {
     padding: 0 10px;
+}
+
+#custom-notification {
+    padding: 0 10px;
+    background-color: @mantle;
+    font-family: "JetBrainsMonoNL NFM";
 }

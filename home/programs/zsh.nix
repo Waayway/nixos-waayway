@@ -13,6 +13,7 @@
       l = "ls -l";
       la = "ls -la";
       ip = "ip --color=auto";
+      cat = "bat";
     };
 
     plugins = with pkgs; [
@@ -31,7 +32,10 @@
       bindkey "^[[1;5C" forward-word
       bindkey "^[[1;5D" backward-word
 
+      eval "$(direnv hook zsh)"
+
       export PATH="$HOME/.local/bin :$PATH"
+      export PATH="$HOME/.flutter-install/flutter/bin:$PATH"
     '';
   };
   programs.starship = {

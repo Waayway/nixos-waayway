@@ -9,5 +9,8 @@
     ./hyprland.nix
     ./sddm.nix
     ./sway.nix
+    ./chrome-cast.nix
+    ./virtual-machine.nix
+    ./adb.nix
   ];
 }

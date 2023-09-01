@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, system, ... }:
 
 {
   imports = [
     ./git.nix
     ./theme.nix
     ./zsh.nix
+    ./direnv.nix
   ];
 
   home.packages = with pkgs; [
@@ -26,15 +27,26 @@
     imagemagick
     rclone
     gnome.gnome-calculator
+    gnome.file-roller
+    gnome.eog
+    krita
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    bat
+    distrobox
 
+    onlyoffice-bin
+
+    android-studio
     ## Development
     # * Rust
-    rustc
-    cargo
+    rustup
     just
 
     # * JS/TS
     nodejs_20
+    obsidian
 
     # * Go
     go
@@ -51,6 +63,9 @@
 
     # * Gaming
     steam
+
+    # * ISO management
+    ventoy-full
   ];
 }
 

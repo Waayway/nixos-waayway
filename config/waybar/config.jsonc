@@ -26,13 +26,16 @@
 		"memory",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"cpu",
-		"custom/left-arrow-light",
-		"custom/left-arrow-dark",
+		// "cpu",
+		// "custom/left-arrow-light",
+		// "custom/left-arrow-dark",
 		"battery",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
-		"disk",
+		// "disk",
+		// "custom/left-arrow-light",
+		// "custom/left-arrow-dark",
+		"custom/notification",
 		"custom/left-arrow-light",
 		"custom/left-arrow-dark",
 		"tray"
@@ -54,11 +57,15 @@
 		"tooltip": false
 	},
 	"wlr/workspaces": {
-		"format": "{name}",
+		"format": "{icon}",
 		"on-click": "activate",
 		"disable-scroll": true,
 		"all-outputs": true,
-		"sort-by-number": true
+		"sort-by-number": true,
+		"format-icons": {
+			"101": "",
+			"102": "󰙯"
+		}
 	},
 	"sway/workspaces": {
 		"format": "{name}",
@@ -79,13 +86,13 @@
 	},
 	"pulseaudio": {
 		"format": "{icon} {volume:2}%",
-		"format-bluetooth": "{icon}  {volume}%",
+		"format-bluetooth": "{icon} {volume}% ",
 		"format-muted": "MUTE",
 		"format-icons": {
 			"headphones": "",
 			"default": [
-				"",
-				""
+				" ",
+				" "
 			]
 		},
 		"scroll-step": 5,
@@ -108,11 +115,11 @@
 		},
 		"format": "{icon} {capacity}%",
 		"format-icons": [
-			"",
-			"",
-			"",
-			"",
-			""
+			" ",
+			" ",
+			" ",
+			" ",
+			" "
 		]
 	},
 	"disk": {
@@ -120,7 +127,17 @@
 		"format": "Disk {percentage_used:2}%",
 		"path": "/"
 	},
+	"custom/notification": {
+		"tooltip": false,
+		"format": "",
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+},
 	"tray": {
 		"icon-size": 20
-	},
+	}
 }

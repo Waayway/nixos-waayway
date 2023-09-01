@@ -7,13 +7,15 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixos-generators = {
-      url = "github:nix-community/nixos-generators";
+
+    # - Programs as Inputs
+    gbar = {
+      url = "github:scorpion-26/gBar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, nixos-generators, ... }:
+  outputs = { nixpkgs, home-manager, gbar, ... }:
     let
       system = "x86_64-linux";
 
@@ -32,6 +34,13 @@
           inherit pkgs;
           modules = [
             ./home
+            {
+              # imports = [
+              #   gbar.homeManagerModules.x86_64-linux.default
+              # ];
+
+              # programs.gBar.enable = true;
+            }
           ];
         };
       };

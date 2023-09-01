@@ -33,6 +33,7 @@ copy-hardware-config:
 garbage-collect:
     sudo nix profile wipe-history --profile /nix/var/nix/profiles/system  --older-than 7d
     sudo nix store gc --debug
+    home-manager expire-generations "-7 days"
 
 install: copy-hardware-config copy-config system-flake home-manager-switch
 
