@@ -12,5 +12,6 @@
     ./chrome-cast.nix
     ./virtual-machine.nix
     ./adb.nix
+    ./podman.nix
   ];
 }

@@ -35,7 +35,9 @@
       eval "$(direnv hook zsh)"
 
       export PATH="$HOME/.local/bin :$PATH"
-      export PATH="$HOME/.flutter-install/flutter/bin:$PATH"
+      export PATH="$HOME/.cargo/bin :$PATH"
+
+      export EDITOR="nvim"
     '';
   };
   programs.starship = {

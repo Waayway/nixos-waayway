@@ -38,7 +38,16 @@
 
     onlyoffice-bin
 
-    android-studio
+    jetbrains-toolbox
+
+    btop
+
+    inkscape
+
+    toolbox
+
+    bottles
+
     ## Development
     # * Rust
     rustup

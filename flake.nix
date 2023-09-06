@@ -9,13 +9,9 @@
     };
 
     # - Programs as Inputs
-    gbar = {
-      url = "github:scorpion-26/gBar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { nixpkgs, home-manager, gbar, ... }:
+  outputs = { nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
 
@@ -34,13 +30,6 @@
           inherit pkgs;
           modules = [
             ./home
-            {
-              # imports = [
-              #   gbar.homeManagerModules.x86_64-linux.default
-              # ];
-
-              # programs.gBar.enable = true;
-            }
           ];
         };
       };

@@ -10,8 +10,11 @@ default:
     @just --list 
 
 home-manager-build:
-    nix build path:.#homeManagerConfigurations.waayway.activationPackage --show-trace
+    nix build path:.#homeManagerConfigurations.waayway.activationPackage
     
+home-manager-build-verbose:
+    nix build path:.#homeManagerConfigurations.waayway.activationPackage --show-trace
+
 home-manager-switch: home-manager-build
     ./result/activate
 
