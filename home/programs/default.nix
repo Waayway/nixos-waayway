@@ -55,6 +55,7 @@
 
     # * JS/TS
     nodejs_20
+    deno
     obsidian
 
     # * Go

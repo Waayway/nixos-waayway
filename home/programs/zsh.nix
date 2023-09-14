@@ -29,15 +29,17 @@
       }
     ];
     initExtra = ''
-      bindkey "^[[1;5C" forward-word
-      bindkey "^[[1;5D" backward-word
+          bindkey "^[[1;5C" forward-word
+          bindkey "^[[1;5D" backward-word
 
-      eval "$(direnv hook zsh)"
+          eval "$(direnv hook zsh)"
 
-      export PATH="$HOME/.local/bin :$PATH"
-      export PATH="$HOME/.cargo/bin :$PATH"
+          export PATH="$HOME/.local/bin :$PATH"
+          export PATH="$HOME/.cargo/bin :$PATH"
+          export BUN_INSTALL="$HOME/.bun" 
+          export PATH="$BUN_INSTALL/bin:$PATH" 
 
-      export EDITOR="nvim"
+          export EDITOR="nvim"
     '';
   };
   programs.starship = {

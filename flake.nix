@@ -9,9 +9,13 @@
     };
 
     # - Programs as Inputs
+    wam = {
+      url = "/home/waayway/code/Hyprland-stuff/wam";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, home-manager, wam, ... }:
     let
       system = "x86_64-linux";
 
@@ -30,6 +34,11 @@
           inherit pkgs;
           modules = [
             ./home
+
+            # - Programs as Inputs
+            {
+              home.packages = [ wam.packages.${system}.default ];
+            }
           ];
         };
       };
