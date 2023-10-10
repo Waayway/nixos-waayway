@@ -1,5 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, system, ... }:
 
+let
+  unstablepkgs = import inputs.nixunstable {
+    inherit system;
+    config = { allowUnfree = true; };
+  };
+in
 {
   nixpkgs.config.allowUnfree = true;
   imports = [
@@ -23,11 +29,12 @@
       brightnessctl
 
       # Hyprland Stuff
-      hyprland
+      # hyprland
       xdg-desktop-portal-hyprland
-      (waybar.overrideAttrs (oldAttrs: {
-        mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-      }))
+      unstablepkgs.waybar
+      # (waybar.overrideAttrs (oldAttrs: {
+      #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      # }))
       swaynotificationcenter
       swww
       hyprpicker
@@ -50,5 +57,6 @@
       gcc
       pkg-config
       unzip
+      gnumake
     ];
 }

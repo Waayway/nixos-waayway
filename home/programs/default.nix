@@ -1,4 +1,4 @@
-{ config, pkgs, system, ... }:
+{ config, pkgs, system, unstable, ... }:
 
 {
   imports = [
@@ -63,10 +63,17 @@
     gopls
 
     # * Python
-    python312
+    python311
+    python311Packages.pip
+    python311Packages.virtualenv
+    python311Packages.django
 
     # * Nix
     rnix-lsp
+  
+    # * Elixir
+    elixir
+    erlang
 
     # * iso burning
     popsicle
@@ -74,8 +81,11 @@
     # * Gaming
     steam
 
+
     # * ISO management
     ventoy-full
+
+    wl-mirror
   ];
 }
 

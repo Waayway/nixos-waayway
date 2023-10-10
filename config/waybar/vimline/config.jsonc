@@ -3,9 +3,8 @@
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
-		"wlr/workspaces",
-		"sway/workspaces",
-		"custom/right-arrow-dark"
+		"hyprland/workspaces",
+		"custom/right-arrow-workspace"
 	],
 	"modules-center": [
 		"custom/left-arrow-dark",
@@ -52,25 +51,46 @@
 		"format": "",
 		"tooltip": false
 	},
+	"custom/right-arrow-workspace": {
+		"format": "",
+		"tooltip": false
+	},
 	"custom/right-arrow-light": {
 		"format": "",
 		"tooltip": false
 	},
-	"wlr/workspaces": {
+	"hyprland/workspaces": {
 		"format": "{icon}",
 		"on-click": "activate",
 		"disable-scroll": true,
 		"all-outputs": true,
 		"sort-by-number": true,
 		"format-icons": {
+			"default": "",
+			"0": "0",
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8",
+			"9": "9",
+			"10": "10",
+			"11": "11",
+			"12": "12",
+			"13": "13",
+			"14": "14",
+			"15": "15",
+			"16": "16",
+			"17": "17",
+			"18": "18",
+			"19": "19",
+			"20": "20",
 			"101": "",
 			"102": "󰙯"
 		}
-	},
-	"sway/workspaces": {
-		"format": "{name}",
-		"disable-scroll": true,
-		"all-outputs": true
 	},
 	"clock#1": {
 		"format": "{:%a}",
@@ -136,7 +156,7 @@
 		"on-click": "swaync-client -t -sw",
 		"on-click-right": "swaync-client -d -sw",
 		"escape": true
-},
+	},
 	"tray": {
 		"icon-size": 20
 	}

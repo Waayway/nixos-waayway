@@ -1,4 +1,4 @@
-@import "mocha.css";
+@import "../mocha.css";
 
 * {
     font-size: 20px;
@@ -8,6 +8,10 @@
 window#waybar {
     background: @base;
     color: @text;
+}
+#custom-right-arrow-workspace {
+    font-size: 24px;
+    color: @surface0;
 }
 
 #custom-right-arrow-dark,
@@ -46,21 +50,15 @@ window#waybar {
     font-family: "JetBrainsMonoNL NFM";
 }
 #workspaces button {
-    padding: 0px 5px;
-    margin: 0px 3px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 16px;
+    padding: 0px 10px;
+    border-radius: 0px;
     background-color: @surface0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 #workspaces button.active {
-    background-color: @surface1;
-    border-radius: 16px;
-    min-width: 40px;
-    background-size: 400% 400%;
-    transition: all 0.3s ease-in-out;
+    background-color: @blue;
+    color: @surface0;
 }
 
 #pulseaudio {

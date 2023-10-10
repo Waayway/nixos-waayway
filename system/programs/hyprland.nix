@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.hyprland = {
@@ -7,6 +7,7 @@
       enable = true;
       hidpi = false;
     };
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   xdg.portal = {

@@ -13,13 +13,22 @@
       url = "/home/waayway/code/Hyprland-stuff/wam";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixunstable = {
+      url = "github:nixos/nixpkgs/nixos-unstable";
+    };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { nixpkgs, home-manager, wam, ... }:
+  outputs = { nixpkgs, ... } @ inputs:
+  # home-manager, wam, nixunstable, hyprland,
     let
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
+        inherit system;
+        config = { allowUnfree = true; };
+      };
+      unstablepkgs = import inputs.nixunstable {
         inherit system;
         config = { allowUnfree = true; };
       };
@@ -30,14 +39,17 @@
     in
     {
       homeManagerConfigurations = {
-        waayway = home-manager.lib.homeManagerConfiguration {
+        waayway = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./home
 
             # - Programs as Inputs
             {
-              home.packages = [ wam.packages.${system}.default ];
+              home.packages = [ 
+                inputs.wam.packages.${system}.default
+                unstablepkgs.bun
+              ];
             }
           ];
         };
@@ -45,7 +57,7 @@
 
       nixosConfigurations = {
         wlaptop = nixosSystem "wlaptop" {
-          inherit nixpkgs;
+          inherit nixpkgs inputs;
           system = "x86_64-linux";
           user = "waayway";
           fullname = "Thijs van Waaij";

@@ -5,6 +5,7 @@ alias sf := system-flake
 alias uf := update-flake
 alias cc := copy-config
 alias gc := garbage-collect
+alias ud := update-dotfiles
 
 default: 
     @just --list 
@@ -40,5 +41,7 @@ garbage-collect:
 
 install: copy-hardware-config copy-config system-flake home-manager-switch
 
-
-
+update-dotfiles: 
+    git add .
+    git commit -m "Updated dotfiles"
+    git push origin main
