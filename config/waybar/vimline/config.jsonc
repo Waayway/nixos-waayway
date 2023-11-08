@@ -3,6 +3,7 @@
 	"layer": "top",
 	"position": "top",
 	"modules-left": [
+		"custom/launcher",
 		"hyprland/workspaces",
 		"custom/right-arrow-workspace"
 	],
@@ -59,10 +60,15 @@
 		"format": "",
 		"tooltip": false
 	},
+
+	"custom/launcher": {
+		"format": "",
+		"on-click": "nwg-drawer"
+	},
+	
 	"hyprland/workspaces": {
 		"format": "{icon}",
 		"on-click": "activate",
-		"disable-scroll": true,
 		"all-outputs": true,
 		"sort-by-number": true,
 		"format-icons": {
@@ -128,6 +134,7 @@
 		"format": "CPU {usage:2}%"
 	},
 	"battery": {
+		
 		"states": {
 			"good": 95,
 			"warning": 30,

@@ -14,6 +14,7 @@
       la = "ls -la";
       ip = "ip --color=auto";
       cat = "bat";
+      c = "code";
     };
 
     plugins = with pkgs; [

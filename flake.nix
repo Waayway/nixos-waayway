@@ -49,6 +49,8 @@
               home.packages = [ 
                 inputs.wam.packages.${system}.default
                 unstablepkgs.bun
+                unstablepkgs.nodePackages_latest.pnpm
+                unstablepkgs.turso-cli
               ];
             }
           ];

@@ -91,3 +91,10 @@ window#waybar {
     background-color: @mantle;
     font-family: "JetBrainsMonoNL NFM";
 }
+
+#custom-launcher {
+    padding: 0 20px 0 10px;
+    background-color: @blue;
+    border-right: 2px @surface0 solid;
+    color: @mantle;
+}

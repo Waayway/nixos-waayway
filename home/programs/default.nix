@@ -33,6 +33,8 @@
     xfce.thunar
     xfce.thunar-archive-plugin
     xfce.thunar-volman
+    cinnamon.nemo
+    cinnamon.nemo-fileroller
     bat
     distrobox
 
@@ -86,6 +88,10 @@
     ventoy-full
 
     wl-mirror
+
+    ungoogled-chromium
+    libreoffice
+    android-studio
   ];
 }
 

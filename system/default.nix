@@ -58,5 +58,6 @@ in
       pkg-config
       unzip
       gnumake
+      udisks
     ];
 }
