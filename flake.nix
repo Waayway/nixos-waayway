@@ -17,6 +17,7 @@
       url = "github:nixos/nixpkgs/nixos-unstable";
     };
     hyprland.url = "github:hyprwm/Hyprland";
+    ags.url = "github:Aylur/ags";
   };
 
   outputs = { nixpkgs, ... } @ inputs:
@@ -41,6 +42,7 @@
       homeManagerConfigurations = {
         waayway = inputs.home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             ./home
 
@@ -49,8 +51,11 @@
               home.packages = [ 
                 inputs.wam.packages.${system}.default
                 unstablepkgs.bun
+                unstablepkgs.eww-wayland
                 unstablepkgs.nodePackages_latest.pnpm
                 unstablepkgs.turso-cli
+                unstablepkgs.vscode
+                unstablepkgs.firefox-devedition
               ];
             }
           ];

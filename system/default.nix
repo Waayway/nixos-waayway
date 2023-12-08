@@ -36,7 +36,7 @@ in
       #   mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       # }))
       swaynotificationcenter
-      swww
+      unstablepkgs.swww
       hyprpicker
       pamixer
       jq
@@ -59,5 +59,7 @@ in
       unzip
       gnumake
       udisks
+
+      bitwarden
     ];
 }

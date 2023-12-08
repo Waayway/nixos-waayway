@@ -6,12 +6,16 @@
     ./theme.nix
     ./zsh.nix
     ./direnv.nix
+    ./ags.nix
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-24.8.6"
   ];
 
   home.packages = with pkgs; [
     kitty
     brave
-    vscode
     spotify
     pavucontrol
     nixpkgs-fmt
@@ -72,7 +76,7 @@
 
     # * Nix
     rnix-lsp
-  
+
     # * Elixir
     elixir
     erlang
@@ -92,6 +96,13 @@
     ungoogled-chromium
     libreoffice
     android-studio
+
+    # * PHP
+    php
+
+    # Other
+    socat
+    pulseaudio
   ];
 }
 
