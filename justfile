@@ -45,3 +45,6 @@ update-dotfiles:
     git add .
     git commit -m "Updated dotfiles"
     git push origin main
+
+
+all: system-flake home-manager-switch

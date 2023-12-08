@@ -3,6 +3,7 @@
 {
   imports = [
     ./home-manager.nix
-    ./programs/default.nix
+    ./programs
+    ./programs.nix
   ];
 }
