@@ -1,0 +1,100 @@
+@import "../mocha.css";
+
+* {
+    font-size: 20px;
+    font-family: "JetBrainsMonoNL NF";
+}
+
+window#waybar {
+    background: @base;
+    color: @text;
+}
+#custom-right-arrow-workspace {
+    font-size: 24px;
+    color: @surface0;
+}
+
+#custom-right-arrow-dark,
+#custom-left-arrow-dark {
+    font-size: 24px;
+    color: @mantle;
+}
+#custom-right-arrow-light,
+#custom-left-arrow-light {
+    color: @base;
+    font-size: 24px;
+    background: @mantle;
+}
+
+#workspaces,
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk,
+#tray {
+    background: @mantle;
+}
+
+#tray * {
+    padding: 0 10px;
+}
+
+#workspaces {
+    border: solid 0px @text;
+    font-weight: normal;
+    font-style: normal;
+}
+#workspaces * {
+    font-family: "JetBrainsMonoNL NFM";
+}
+#workspaces button {
+    padding: 0px 10px;
+    border-radius: 0px;
+    background-color: @surface0;
+    transition: all 0.2s ease-in-out;
+}
+
+#workspaces button.active {
+    background-color: @blue;
+    color: @surface0;
+}
+
+#pulseaudio {
+    color: @blue;
+}
+#memory {
+    color: @green;
+}
+#cpu {
+    color: @sapphire;
+}
+#battery {
+    color: @green;
+}
+#disk {
+    color: @peach;
+}
+
+#clock,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#disk {
+    padding: 0 10px;
+}
+
+#custom-notification {
+    padding: 0 10px;
+    background-color: @mantle;
+    font-family: "JetBrainsMonoNL NFM";
+}
+
+#custom-launcher {
+    padding: 0 20px 0 10px;
+    background-color: @blue;
+    border-right: 2px @surface0 solid;
+    color: @mantle;
+}
