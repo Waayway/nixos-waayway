@@ -1,0 +1,43 @@
+@import "./variables.scss";
+
+* {
+    all: unset;
+    font-family: "JetBrains Mono NF", monospace;
+    // border: $green solid 1px;
+}
+
+.background.osd {
+    .osd-widget {
+        min-width: 1em;
+        border-radius: 20px;
+        background-color: $base;
+        margin: 1rem;
+        color: $text;
+        padding: 1em;
+
+
+        $width: 1em;
+        scale {
+            trough {
+                background-color: $surface0;
+                border-radius: 20px;
+                min-height: 15em;
+                min-width: $width;
+                margin: 0px 10px 0px 5px;
+                highlight {
+                    background-color: $blue;
+                    border-radius: 20px;
+                }
+            }
+        }
+
+
+        .icon {
+            font-size: 40px;
+            min-width: 30px;
+            min-height: 30px;
+            padding-right: 8px;
+            font-family: "JetBrains Mono NF", monospace;
+        }
+    }
+}

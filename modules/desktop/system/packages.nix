@@ -24,6 +24,7 @@
 
     # --Prorgamming--
     ### Various
+    gh # GithubCLI
 
     # --Programming/Rust--
     rustup

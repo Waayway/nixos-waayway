@@ -1,0 +1,19 @@
+#!/bin/bash
+
+STATE=$(eww active-windows | grep osd)
+TIMESTAMP=$(cat ~/.config/eww/scripts/osd-timestamp)
+if [[ $1 == 'close' ]]; then
+    if [[ $STATE == 'osd: osd' ]]; then 
+        eww close osd; 
+    fi
+else
+    eww update osd="{ \"icon\": \"$1\", \"value\": \"$2\" }"
+    echo $(date +%s) > ~/.config/eww/scripts/osd-timestamp
+    if [[ $STATE != 'osd: osd' ]]; then 
+        eww open osd;
+    fi
+    sleep 4
+    if [[ $STATE == 'osd: osd' && $(($(date +%s) - $TIMESTAMP)) -ge 4 ]]; then 
+        eww close osd;
+    fi
+fi
