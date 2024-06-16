@@ -1,3 +1,5 @@
+# This is the old version see branch main for the newest.
+
 # Actuall good setup of nixos
 
 Had a setup of nixos was trying it out but was always lacking in how to set it up....
