@@ -4,9 +4,14 @@
     ### Various
     gnome.gnome-calculator
     cinnamon.nemo
+    pass-wayland
+
     # --Applications/Web--
     firefox
-    brave
+    pkgs-unstable.brave
+
+    # --Applications/Communication--
+    vesktop
 
     # --Applications/Multimedia--
     spotify

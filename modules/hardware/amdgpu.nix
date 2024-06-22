@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 {
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
@@ -10,6 +10,7 @@
     extraPackages = with pkgs; [
       amdvlk
     ];
+    package = pkgs-unstable.mesa.drivers;
   };
   hardware.enableRedistributableFirmware = true;
 }

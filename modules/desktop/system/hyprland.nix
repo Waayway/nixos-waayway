@@ -4,8 +4,7 @@
     package = pkgs-unstable.hyprland;
   };
 
-
-
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   environment.systemPackages = with pkgs; [
     # --Utils and more--

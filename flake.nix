@@ -1,13 +1,14 @@
 {
   description = "Nixos configuration waayway";
 
+
   inputs = {
     # have unstable if needed for some packages
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.11";
+      url = "github:nix-community/home-manager/release-24.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
@@ -15,7 +16,7 @@
   outputs = inputs@{ self, nixpkgs, ... }:
     let
       nixosSystem = import ./lib/nixosConfig.nix;
-      version = "23.11";
+      version = "24.05";
     in
     {
       nixosConfigurations = {
