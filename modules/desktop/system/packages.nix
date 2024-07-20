@@ -1,5 +1,6 @@
 { pkgs, pkgs-unstable, ... }: {
   environment.systemPackages = with pkgs; [
+    themechanger
     # --Applications--
     ### Various
     gnome.gnome-calculator

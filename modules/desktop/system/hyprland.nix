@@ -1,7 +1,7 @@
 { inputs, pkgs, pkgs-unstable, ... }: {
   programs.hyprland = {
     enable = true;
-    package = pkgs-unstable.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
   };
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";

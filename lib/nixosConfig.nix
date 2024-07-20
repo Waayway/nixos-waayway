@@ -4,6 +4,7 @@ let
     inherit system;
 
     overlays = import ./unstable-overlays.nix;
+    config.allowUnfree = true;
   };
 in
 nixpkgs.lib.nixosSystem {
@@ -21,6 +22,7 @@ nixpkgs.lib.nixosSystem {
     ../hosts/${name}/hardware-config.nix
     ../modules/base.nix
     inputs.home-manager.nixosModules.home-manager
+    inputs.nix-gaming.nixosModules.platformOptimizations
     {
       system.stateVersion = version;
     }

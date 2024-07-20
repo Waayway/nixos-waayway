@@ -1,11 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, pkgs-unstable, ... }:
 
 let
-  catpuccin_name = "Catppuccin-Mocha-Standard-Blue-Dark";
-  catpuccin = pkgs.catppuccin-gtk.override {
-    accents = [ "blue" ];
-    tweaks = [ "rimless" ];
-    variant = "mocha";
+  catpuccin = pkgs-unstable.colloid-gtk-theme.override {
+    colorVariants = [ "dark" ];
+    tweaks = [ "rimless" "catppuccin" ];
   };
 in
 {
@@ -13,7 +11,7 @@ in
   gtk = {
     enable = true;
     theme = {
-      name = catpuccin_name;
+      name = "Colloid-Dark-Catppuccin";
       package = catpuccin;
     };
     iconTheme = {
