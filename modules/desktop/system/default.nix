@@ -1,7 +1,4 @@
 { hardware, ... }:
-let
-  desktop = builtins.hasAttr "desktop" hardware && hardware.desktop;
-in
 {
   imports = [
     ./hyprland.nix
@@ -11,6 +8,8 @@ in
     ./greetd.nix
     ./general.nix
     ./kernel.nix
-  ] ++ (if (desktop) then [ ./steam.nix ] else [ ]);
+    ./steam.nix
+    ./dualbooting.nix
+  ];
   services.udisks2.enable = true;
 }

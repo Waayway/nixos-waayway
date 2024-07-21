@@ -30,22 +30,12 @@
       nixosConfigurations = {
         wdesktop = nixosSystem "wdesktop" {
           inherit inputs nixpkgs version;
-          hardware = {
-            amdgpu = true;
-            desktop = true;
-            bluetooth = true;
-          };
           system = "x86_64-linux";
           user = "waayway";
           fullname = "Thijs van Waaij";
         };
         wlaptop = nixosSystem "wlaptop" {
           inherit inputs nixpkgs version;
-          hardware = {
-            amdgpu = true;
-            laptop = true;
-            bluetooth = true;
-          };
           system = "x86_64-linux";
           user = "waayway";
           fullname = "Thijs van Waaij";

@@ -10,6 +10,7 @@
     ./nix.nix
     ./console.nix
     ./docker.nix
+    ./boot.nix
   ];
 }
 

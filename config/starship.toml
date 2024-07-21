@@ -18,6 +18,7 @@ $nodejs\
 $nim\
 $rust\
 $scala\
+$python\
 [](fg:#527284 bg:#06969A)\
 $docker_context\
 [](fg:#06969A bg:#33658A)\
@@ -113,6 +114,11 @@ format = '[ $symbol ($version) ]($style)'
 symbol = " "
 style = "bg:#527284"
 format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = ""
+style = "bg:#527284"
+format = '[ $symbol ($version)($virtualenv) ]($style)'
 
 [rust]
 symbol = ""

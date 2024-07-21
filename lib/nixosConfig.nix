@@ -1,4 +1,4 @@
-name: { nixpkgs, inputs, system, user, fullname, version, hardware }:
+name: { nixpkgs, inputs, system, user, fullname, version }:
 let
   pkgs-unstable = import inputs.nixpkgs-unstable {
     inherit system;
@@ -10,7 +10,7 @@ in
 nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit inputs version pkgs-unstable hardware;
+    inherit inputs version pkgs-unstable;
     hostname = name;
     user = {
       username = user;
@@ -19,7 +19,7 @@ nixpkgs.lib.nixosSystem {
     helpers = import ./default.nix;
   };
   modules = [
-    ../hosts/${name}/hardware-config.nix
+    ../hosts/${name}
     ../modules/base.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.nix-gaming.nixosModules.platformOptimizations
