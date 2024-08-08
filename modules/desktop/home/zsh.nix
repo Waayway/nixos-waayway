@@ -38,6 +38,9 @@
       export PATH="$HOME/.cargo/bin :$PATH"
       export BUN_INSTALL="$HOME/.bun"
       export PATH="$BUN_INSTALL/bin:$PATH" 
+
+      export PATH=~/.npm-packages/bin:$PATH
+      export NODE_PATH=~/.npm-packages/lib/node_modules
     '';
   };
 

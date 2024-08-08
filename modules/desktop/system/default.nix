@@ -1,4 +1,4 @@
-{ hardware, ... }:
+{ ... }:
 {
   imports = [
     ./hyprland.nix
@@ -10,6 +10,9 @@
     ./kernel.nix
     ./steam.nix
     ./dualbooting.nix
+    ./neovim.nix
+    ./caps2esc.nix
+    ./frankwatching.nix
   ];
   services.udisks2.enable = true;
 }

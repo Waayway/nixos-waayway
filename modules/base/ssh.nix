@@ -5,7 +5,7 @@
       X11Forwarding = true;
 
       PermitRootLogin = "prohibit-password";
-      PasswordAuthentication = false;
+      PasswordAuthentication = true;
     };
     openFirewall = true;
   };

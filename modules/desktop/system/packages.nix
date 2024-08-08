@@ -13,6 +13,7 @@
 
     # --Applications/Communication--
     vesktop
+    slack
 
     # --Applications/Multimedia--
     spotify
@@ -54,6 +55,7 @@
     docker-compose
     gcc
     pkg-config
+    openssl
 
     rustup
   ];
