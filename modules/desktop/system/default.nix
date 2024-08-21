@@ -12,6 +12,7 @@
     ./dualbooting.nix
     ./neovim.nix
     ./caps2esc.nix
+
     ./frankwatching.nix
   ];
   services.udisks2.enable = true;

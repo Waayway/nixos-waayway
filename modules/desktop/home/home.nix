@@ -5,6 +5,7 @@
     ./zoxide.nix
     ./dotconfig.nix
     ./theme.nix
+    ./wezterm.nix
     inputs.catppuccin.homeManagerModules.catppuccin
   ];
   home.username = user.username;

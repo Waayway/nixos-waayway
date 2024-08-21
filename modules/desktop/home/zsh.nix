@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ pkgs, ... }: {
   home.packages = with pkgs; [
     lsd
     bat
