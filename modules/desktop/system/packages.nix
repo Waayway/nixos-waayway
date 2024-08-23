@@ -24,7 +24,7 @@
     inkscape
 
     # --Applications/Terminal--
-    kitty
+    pkgs-unstable.kitty
 
     # --Applications/Office--
     libreoffice

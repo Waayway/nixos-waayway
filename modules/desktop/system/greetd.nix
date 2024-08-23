@@ -19,14 +19,15 @@ in
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.sway}/bin/sway --config ${swayConfig}";
+        command = "${pkgs-unstable.sway}/bin/sway --config ${swayConfig}";
         user = "greeter";
       };
     };
   };
 
-  environment.systemPackages = with pkgs; [
+
+  environment.systemPackages = with pkgs-unstable; [
     sway
-    pkgs-unstable.greetd.wlgreet
+    greetd.wlgreet
   ];
 }
