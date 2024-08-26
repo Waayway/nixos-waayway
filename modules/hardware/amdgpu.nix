@@ -18,8 +18,6 @@ in
     LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath openglLibs}";
     LIBGL_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
     LIBVA_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
-    VK_ICD_FILENAMES = "${pkgs-unstable.mesa.drivers}/share/vulkan/icd.d/${builtins.match ".*vulkan.*" "mesa.json"}";
-    VK_LAYER_PATH = "${pkgs-unstable.vulkan-validation-layers}/share/vulkan/explicit_layer.d";
   };
 
 
