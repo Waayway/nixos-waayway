@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, ... }: {
+{ pkgs, pkgs-unstable, inputs, ... }: {
   environment.systemPackages = with pkgs; [
     themechanger
     # --Applications--
@@ -25,6 +25,7 @@
 
     # --Applications/Terminal--
     pkgs-unstable.kitty
+    inputs.wezterm.packages."${pkgs.system}".default
 
     # --Applications/Office--
     libreoffice
