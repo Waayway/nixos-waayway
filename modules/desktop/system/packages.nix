@@ -3,13 +3,15 @@
     themechanger
     # --Applications--
     ### Various
-    gnome.gnome-calculator
-    cinnamon.nemo
+    gnome-calculator
+    nemo
     pass-wayland
 
     # --Applications/Web--
     firefox
     pkgs-unstable.brave
+    inputs.zen-browser.packages."${system}".specific
+    figma-linux
 
     # --Applications/Communication--
     vesktop

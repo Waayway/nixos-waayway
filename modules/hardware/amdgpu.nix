@@ -14,20 +14,18 @@ in
 
   config = mkIf cfg.enable {
 
-  environment.variables = {
-    LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath openglLibs}";
-    LIBGL_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
-    LIBVA_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
-  };
+    environment.variables = {
+      LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath openglLibs}";
+      LIBGL_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
+      LIBVA_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
+    };
 
 
     boot.initrd.kernelModules = [ "amdgpu" ];
     boot.kernelModules = [ "kvm-amd" ];
     services.xserver.videoDrivers = [ "amdgpu" ];
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
       extraPackages = with pkgs; [
         amdvlk
         pkgs-unstable.mesa
@@ -40,5 +38,9 @@ in
       package = pkgs-unstable.mesa.drivers;
     };
     hardware.enableRedistributableFirmware = true;
-   };
+
+    systemd.tmpfiles.rules = [
+      "L+    /opt/rocm/hip   -    -    -     -    ${pkgs.rocmPackages.clr}"
+    ];
+  };
 }

@@ -1,0 +1,18 @@
+@use "_colors.scss" as c;
+
+window.Bar {
+    background: transparent;
+    color: c.get_color("text");
+    font-weight: bold;
+
+    >centerbox {
+        background: c.get_color("base");
+        border-radius: 10px;
+        margin: 8px;
+    }
+
+    button {
+        border-radius: 8px;
+        margin: 2px;
+    }
+}

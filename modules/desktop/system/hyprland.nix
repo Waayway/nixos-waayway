@@ -29,5 +29,6 @@
     pkgs-unstable.waybar
     wlogout
     nwg-drawer
+ 
   ];
 }
