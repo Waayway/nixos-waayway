@@ -33,4 +33,18 @@ config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = false
 config.switch_to_last_active_tab_when_closing_tab = true
 
+local act = wezterm.action
+config.mouse_bindings = {
+	{
+		event = { Down = { streak = 1, button = { WheelUp = 1 } } },
+		mods = "NONE",
+		action = act.ScrollByLine(-5),
+	},
+	{
+		event = { Down = { streak = 1, button = { WheelDown = 1 } } },
+		mods = "NONE",
+		action = act.ScrollByLine(5),
+	},
+}
+
 return config

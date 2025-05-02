@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-unstable, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 with lib;
 let
@@ -14,7 +14,7 @@ in
       localNetworkGameTransfers.openFirewall = true;
       dedicatedServer.openFirewall = false;
       extest.enable = true;
-      package = pkgs-unstable.steam.override {
+      package = pkgs.steam.override {
         extraEnv = {
           MANGOHUD = true;
         };
@@ -25,7 +25,7 @@ in
     };
     programs.gamemode.enable = true;
 
-    environment.systemPackages = with pkgs-unstable; [
+    environment.systemPackages = with pkgs; [
       mangohud
       gamescope
       steamtinkerlaunch

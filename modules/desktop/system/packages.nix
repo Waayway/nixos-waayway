@@ -1,4 +1,4 @@
-{ pkgs, pkgs-unstable, inputs, ... }: {
+{ pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [
     themechanger
     # --Applications--
@@ -9,8 +9,8 @@
 
     # --Applications/Web--
     firefox
-    pkgs-unstable.brave
-    inputs.zen-browser.packages."${system}".specific
+    brave
+    # See home-manager config for zen-browser
     figma-linux
 
     # --Applications/Communication--
@@ -26,7 +26,7 @@
     inkscape
 
     # --Applications/Terminal--
-    pkgs-unstable.kitty
+    kitty
     inputs.wezterm.packages."${pkgs.system}".default
 
     # --Applications/Office--
@@ -36,13 +36,19 @@
     ### Various
     gh # GithubCLI
 
+    # --Programming/Go--
+    go_1_24
+    gotools
+    templ
+    go-task
+
     # --Programming/Rust--
     rustup
 
     # --Programming/Typescript--
     nodejs_20
     deno
-    pkgs-unstable.bun
+    bun
 
     # --Programs/Python--
     python3

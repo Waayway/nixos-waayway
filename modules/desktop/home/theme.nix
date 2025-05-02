@@ -1,7 +1,7 @@
-{ config, pkgs, pkgs-unstable, ... }:
+{ config, inputs, pkgs, ... }:
 
 let
-  catpuccin = pkgs-unstable.colloid-gtk-theme.override {
+  catpuccin = pkgs.colloid-gtk-theme.override {
     colorVariants = [ "dark" ];
     tweaks = [ "rimless" "catppuccin" ];
   };
@@ -19,14 +19,14 @@ in
       package = pkgs.papirus-icon-theme;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
+      name = "Rose-Pine";
+      package = pkgs.rose-pine-cursor;
     };
   };
 
   # Qt
   qt = {
-    enable = true;
+    enable = false;
     platformTheme.name = "gtk";
   };
 }

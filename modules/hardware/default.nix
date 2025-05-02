@@ -4,6 +4,8 @@
     ./audio.nix
     ./amdgpu.nix
     ./bluetooth.nix
-    ./displaylink.nix
+    ./fingerprint.nix
+    ./framework.nix
+#    ./displaylink.nix
   ];
 }

@@ -1,4 +1,4 @@
-{pkgs, pkgs-unstable, ...}:
+{pkgs, ...}:
  
 {
   environment.systemPackages = with pkgs; [
@@ -7,8 +7,10 @@
     nixd
     emmet-ls
     nodePackages.intelephense
+
+    gopls
  
-    pkgs-unstable.typescript-language-server
-    pkgs-unstable.tailwindcss-language-server
+    typescript-language-server
+    tailwindcss-language-server
   ];
 }

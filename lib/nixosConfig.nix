@@ -1,16 +1,8 @@
 name: { nixpkgs, inputs, system, user, fullname, version }:
-let
-  pkgs-unstable = import inputs.nixpkgs-unstable {
-    inherit system;
-
-    overlays = import ./unstable-overlays.nix;
-    config.allowUnfree = true;
-  };
-in
 nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit inputs version pkgs-unstable;
+    inherit inputs version;
     hostname = name;
     user = {
       username = user;

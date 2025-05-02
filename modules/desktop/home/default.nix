@@ -1,9 +1,9 @@
-{ home-manager, user, inputs, hostname, helpers, pkgs-unstable, ... }: {
+{ home-manager, user, inputs, hostname, helpers, ... }: {
   imports = [
     ./zsh-system.nix
   ];
   home-manager.extraSpecialArgs = {
-    inherit user inputs hostname helpers pkgs-unstable;
+    inherit user inputs hostname helpers;
   };
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;

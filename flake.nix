@@ -3,11 +3,10 @@
 
   inputs = {
     # have unstable if needed for some packages
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -16,26 +15,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin.url = "github:catppuccin/nix";
+# catppuccin.url = "github:catppuccin/nix"; Was previously for gtk theme
 
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
 
-    ags.url = "github:aylur/ags";
-    
     wezterm = {
       url = "github:wez/wezterm?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     zen-browser = {
-      url = "github:MarceColl/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake";
+      # IMPORTANT: we're using "libgbm" and is only available in unstable so ensure
+      # to have it up-to-date or simply don't specify the nixpkgs input  
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
   outputs = inputs@{ nixpkgs, ... }:
     let
       nixosSystem = import ./lib/nixosConfig.nix;
-      version = "24.11";
+      version = "25.05";
     in
     {
       nixosConfigurations = {
@@ -45,7 +44,15 @@
           user = "waayway";
           fullname = "Thijs van Waaij";
         };
-        wlaptop = nixosSystem "wlaptop" {
+
+        wlaptop-fw = nixosSystem "wlaptop-fw" {
+          inherit inputs nixpkgs version;
+          system = "x86_64-linux";
+          user = "waayway";
+          fullname = "Thijs van Waaij";
+        };
+
+        wlaptop = nixosSystem "wlaptop" { # OLD idk how relevant this still is
           inherit inputs nixpkgs version;
           system = "x86_64-linux";
           user = "waayway";

@@ -1,33 +1,30 @@
-{ pkgs, pkgs-unstable, ... }:
-
-
+{ pkgs, ... }:
 let
-  swayConfig = pkgs.writeText "greetd-sway-config" ''
-    exec "${pkgs-unstable.greetd.wlgreet}/bin/wlgreet -e Hyprland; swaymsg exit"
-    bindsym Mod4+shift+e exec swaynag \
-      -t warning \
-      -m 'What do you want to do?' \
-      -b 'Poweroff' 'systemctl poweroff' \
-      -b 'Reboot' 'systemctl reboot'
-
-    output "*" bg #000000 solid_color
-  '';
+  catpuccin = pkgs.colloid-gtk-theme.override {
+    colorVariants = [ "dark" ];
+    tweaks = [ "rimless" "catppuccin" ];
+  };
 in
 {
   # Enable Display Manager
   services.greetd = {
     enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs-unstable.sway}/bin/sway --config ${swayConfig}";
-        user = "greeter";
-      };
-    };
   };
 
+  programs.regreet = {
+    enable = true;
 
-  environment.systemPackages = with pkgs-unstable; [
-    sway
-    greetd.wlgreet
-  ];
+    theme = {
+      name = "Colloid-Dark-Catppuccin";
+      package = catpuccin;
+    };
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+    cursorTheme = {
+      name = "Rose-Pine";
+      package = pkgs.rose-pine-cursor;
+    };
+  };
 }

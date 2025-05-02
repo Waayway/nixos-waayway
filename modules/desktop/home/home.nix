@@ -5,8 +5,7 @@
     ./zoxide.nix
     ./dotconfig.nix
     ./theme.nix
-    ./ags.nix
-    inputs.catppuccin.homeManagerModules.catppuccin
+    ./zen-browser.nix
   ];
   home.username = user.username;
   home.homeDirectory = "/home/${user.username}";

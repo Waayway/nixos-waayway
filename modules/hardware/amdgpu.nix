@@ -1,10 +1,10 @@
-{ config, lib, pkgs, pkgs-unstable, builtins, ... }:
+{ config, lib, pkgs, builtins, ... }:
 with lib;
 let
   cfg = config.modules.hardware.amdgpu;
-  openglLibs = with pkgs-unstable; [
+  openglLibs = with pkgs; [
     libGL
-    mesa.drivers
+    mesa
     libglvnd
     wayland
   ];
@@ -16,10 +16,9 @@ in
 
     environment.variables = {
       LD_LIBRARY_PATH = "${pkgs.lib.makeLibraryPath openglLibs}";
-      LIBGL_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
-      LIBVA_DRIVERS_PATH = "${pkgs-unstable.mesa.drivers}/lib/dri";
+      LIBGL_DRIVERS_PATH = "${pkgs.mesa}/lib/dri";
+      LIBVA_DRIVERS_PATH = "${pkgs.mesa}/lib/dri";
     };
-
 
     boot.initrd.kernelModules = [ "amdgpu" ];
     boot.kernelModules = [ "kvm-amd" ];
@@ -28,14 +27,14 @@ in
       enable = true;
       extraPackages = with pkgs; [
         amdvlk
-        pkgs-unstable.mesa
+        pkgs.mesa
         libglvnd
         vulkan-validation-layers
         libGL
         vulkan-loader
       ];
       extraPackages32 = with pkgs.pkgsi686Linux; [ intel-media-driver intel-vaapi-driver ];
-      package = pkgs-unstable.mesa.drivers;
+      package = pkgs.mesa;
     };
     hardware.enableRedistributableFirmware = true;
 

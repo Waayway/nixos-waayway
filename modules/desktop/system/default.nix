@@ -13,7 +13,7 @@
     ./neovim.nix
     ./caps2esc.nix
 
-    ./frankwatching.nix
+    ./1password.nix
   ];
   services.udisks2.enable = true;
 }
