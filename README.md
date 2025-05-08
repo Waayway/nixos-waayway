@@ -6,6 +6,8 @@ For other versions see:
 - [v1](https://github.com/Waayway/nixos-config/tree/v1)
 - [v2](https://github.com/Waayway/nixos-config/tree/v2)
 
+WARNING: This config is not final. See v2 for that. but im still experimenting with some features and making it to a 1.0 version
+
 ### Why NixOS
 
 #### Bazzite
