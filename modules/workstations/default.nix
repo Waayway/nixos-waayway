@@ -4,6 +4,7 @@
     [
       ./kernel.nix
       ./graphics.nix
+      ./sound.nix
     ]
     ++ umport {
       paths = [

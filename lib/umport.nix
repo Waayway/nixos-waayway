@@ -26,7 +26,9 @@ let
       excludedDirs = filter (path: pathIsDirectory path) exclude;
       isExcluded =
         path:
-        if !includeHome && hasSuffix "_home.nix" (builtins.toString path) then
+        if hasSuffix "_lib.nix" (builtins.toString path) then # On lib files dont
+          true
+        else if !includeHome && hasSuffix "_home.nix" (builtins.toString path) then
           true
         else if includeHome && !(hasSuffix "_home.nix" (builtins.toString path)) then
           true
