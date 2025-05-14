@@ -1,0 +1,7 @@
+(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
+(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+
+(deflisten media :initial "{}" "bash ~/.config/eww/scripts/media-status")
+
+(deflisten volume :initial "100" "bash ~/.config/eww/scripts/audio")
+

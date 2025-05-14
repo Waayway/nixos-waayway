@@ -15,6 +15,7 @@
     ### Sound
     playerctl
     pamixer
+    pavucontrol
 
     ### Other
     swaynotificationcenter
@@ -31,6 +32,10 @@
 
     # HyprCursor cursor
     rose-pine-hyprcursor
+
+    # Other applications
+    nemo
+    nemo-fileroller
 
     # Hypr Ecosystem
     pkgs.hyprpicker

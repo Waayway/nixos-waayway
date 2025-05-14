@@ -20,6 +20,8 @@ let
   isLaptop = machineOptions.isLaptop;
   isLinux = true; # TODO: Darwin
 
+  colors = import ./color.nix { };
+
   machineConfig = machineOptions.config;
 
   baseConfig = ../modules/system.nix;
@@ -31,6 +33,8 @@ let
     currentSystemName = name;
     currentVersion = version;
     inputs = inputs;
+
+    color = colors;
 
     isServer = isServer;
     isLaptop = isLaptop;

@@ -1,5 +1,25 @@
 {
   "nodes": {
+    "astal": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1745934282,
+        "narHash": "sha256-hgUd4yUYALHzzoEi/88BnsgrxZIqk+zyQVoI3CL61IU=",
+        "owner": "aylur",
+        "repo": "astal",
+        "rev": "07583deff8a486fad472718572c3248f0fbea1f3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "astal",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -68,33 +88,30 @@
         "type": "github"
       }
     },
-    "quickshell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+    "rofiThemeRepo": {
+      "flake": false,
       "locked": {
-        "lastModified": 1746510767,
-        "narHash": "sha256-0Pjx+XN//AH8xBwWCVoKVLADLvbfJ+2VsrXW5CbIQIo=",
-        "ref": "refs/heads/master",
-        "rev": "8863bf55ff5c4045e82e468aa7a8e7969e8c921d",
-        "revCount": 507,
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+        "lastModified": 1664792203,
+        "narHash": "sha256-s1ENTByJuWlL1gYuWgcrNQ+2McLucDjGUwgXBYAwAW4=",
+        "owner": "Murzchnvok",
+        "repo": "rofi-collection",
+        "rev": "f1f063f00403a292581375aff51981b4d14850b2",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+        "owner": "Murzchnvok",
+        "repo": "rofi-collection",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
+        "astal": "astal",
         "home-manager": "home-manager",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
-        "quickshell": "quickshell"
+        "rofiThemeRepo": "rofiThemeRepo"
       }
     }
   },

@@ -11,12 +11,17 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+    astal = {
+      url = "github:aylur/astal";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    rofiThemeRepo = {
+      url = "github:Murzchnvok/rofi-collection";
+      flake = false;
+    };
   };
 
   outputs =

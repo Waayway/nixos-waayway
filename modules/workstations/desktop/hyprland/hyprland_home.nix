@@ -40,7 +40,7 @@ in
         [
           "$mod, Return, exec, wezterm start --always-new-process"
           "$mod, B, exec, firefox"
-          "$mod, Space, exec, rofi -show drun"
+          "$mod, Space, exec, rofi -show drun -theme ~/.config/rofi/theme.rasi"
           "$mod, T, exec, nemo"
 
           "$mod SHIFT, S, exec, grim -g \"$(slurp)\" - | wl-copy"
@@ -74,8 +74,7 @@ in
           ", XF86AudioPrev, exec, playerctl previous"
           ", XF86audiostop, exec, playerctl stop"
 
-          "$mod SHIFT, F12, exec, ~/.config/hypr/scripts/wallpaper-random.sh"
-          "$mod ALT SHIFT, F12, exec, ~/.config/hypr/scripts/gamemode.sh"
+          "$mod SHIFT, F12, exec, bash ~/.config/hypr/scripts/wallpaper-random.sh"
         ]
         ++ (
           # workspaces

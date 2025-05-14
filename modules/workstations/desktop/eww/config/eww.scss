@@ -1,0 +1,18 @@
+@mixin rounding {
+  border-radius: 12px;
+}
+
+.themes {
+  margin-right: 1rem;
+}
+.small {
+  font-size: 10px
+}
+
+@import "color";
+@import "bar/style";
+
+* {
+  all: unset;
+  transition: 100ms ease;
+}

@@ -1,0 +1,65 @@
+.bar {
+  background: $bg;
+  @include rounding;
+}
+
+.launcher {
+  @include rounding;
+
+  color: $bg;
+  background: $blue;
+  padding: 3px 12px;
+  padding-left: 16px;
+  margin: 5px 0;
+  margin-left: 0.5rem;
+  font-size: 22px;
+}
+
+.workspaces {
+  .workspace {
+    border-style: none;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    transition: background-color 200ms ease-out;
+    background-color: $purple;
+    color: $bg;
+    font-size: 14px;
+
+    $size: 24px;
+
+    min-width: $size;
+    min-height: $size;
+    margin: 0 0.4rem;
+    border-radius: $size / 2;
+
+    &.occupied {
+      background-color: $blue;
+    }
+
+    &.current {
+      background-color: $green;
+    }
+  }
+}
+
+
+.musicbar {
+  font-size: 16px;
+
+  .music-gradient {
+    @include rounding;
+    margin: 0px 0px;
+    background-image: linear-gradient(to right, rgba($blue, 0.8) 40%, rgba($purple, 0.7));
+    min-height: 42px;
+    min-width: 280px;
+  }
+}
+
+
+.time {
+  background-color: $bg_search;
+  padding: 3px 12px;
+  border-radius: 50px;
+  font-size: 16px;
+}
+
