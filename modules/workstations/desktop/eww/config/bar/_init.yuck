@@ -2,7 +2,7 @@
   (box :class "bar" :vexpand false :orientation "horizontal" :space-evenly true
     (box :halign "start" :valign "center":vexpand false   :space-evenly false :spacing 7 (launcher) (workspaces))
     (box :halign "center" :valign "center" :hexpand true :vexpand false   :space-evenly false :spacing 7 (music))
-    (box :halign "end" :class "image" :valign "center" :space-evenly false :orientation 'h' :spacing 10 (datetime) (battery) (systemtray))
+    (box :halign "end" :class "image" :valign "center" :space-evenly false :orientation 'h' :spacing 10 (box :space-evenly false (datetime) (battery)) (systemtray))
   )
 )
 
@@ -56,13 +56,13 @@
     )))
 )
 
-(defpoll time        :interval "1s" `date "+%H:%M"`)
+(defpoll time :interval "1s" `date "+%H:%M"`)
 (defwidget datetime []
-  (box :class "time" '${time}')
+  (box :class "time ${battery != "false" ? "has-battery" : ""}" '${time}')
 )
 
 (defwidget battery []
-  "" 
+  (box :class "battery ${battery.discharging == "true" ? "on-battery" : "on-charger"}" "${battery.percentage}%") 
 )
 
 (defwidget systemtray []

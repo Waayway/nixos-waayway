@@ -5,3 +5,5 @@
 
 (deflisten volume :initial "100" "bash ~/.config/eww/scripts/audio")
 
+(deflisten battery :initial "false" "bash ~/.config/eww/scripts/battery")
+

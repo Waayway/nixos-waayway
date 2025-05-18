@@ -25,21 +25,20 @@
         "sd_mod"
       ];
       boot.kernelModules = [ "kvm-amd" ];
+fileSystems."/" =
+    { device = "/dev/disk/by-uuid/13db84b5-d926-4ef0-a236-5505c84b802e";
+      fsType = "ext4";
+    };
 
-      fileSystems."/" = {
-        device = "/dev/disk/by-uuid/8969cdc0-96d7-407e-a19c-4251ae7e10b6";
-        fsType = "ext4";
-      };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/E60B-51DA";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
-      fileSystems."/boot" = {
-        device = "/dev/disk/by-uuid/153C-E867";
-        fsType = "vfat";
-        options = [
-          "fmask=0077"
-          "dmask=0077"
-        ];
-      };
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/ceb758d5-9c7f-4a89-b5aa-54a6254fc679"; }
+    ];
 
-      swapDevices = [ { device = "/dev/disk/by-uuid/b306c09a-cee7-47bc-a243-759717c008e4"; } ];
     };
 }

@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# Find the first battery directory (BAT0, BAT1, etc)
+BATTERY_DIR=$(find /sys/class/power_supply/ -maxdepth 1  -name "BAT*" | head -n1)
+
+if [[ -z "$BATTERY_DIR" ]]; then
+    echo 'false'
+    exit 1
+fi
+
+STATUS_FILE="$BATTERY_DIR/status"
+CAPACITY_FILE="$BATTERY_DIR/capacity"
+
+last_status=""
+last_capacity=""
+
+while true; do
+    # Read status and capacity
+    status=$(<"$STATUS_FILE")
+    capacity=$(<"$CAPACITY_FILE")
+
+    # Only print if changed
+    if [[ "$status" != "$last_status" || "$capacity" != "$last_capacity" ]]; then
+        if [[ "$status" == "Discharging" ]]; then
+            is_discharging=true
+        else
+            is_discharging=false
+        fi
+        printf '{"discharging": %s, "percentage": %s}\n' "$is_discharging" "$capacity"
+        last_status="$status"
+        last_capacity="$capacity"
+    fi
+
+    sleep 2  # Polling interval; change as desired
+done
