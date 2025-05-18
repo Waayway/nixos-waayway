@@ -1,6 +1,6 @@
-{ upkgs, ... }:
+{ pkgs, ... }:
 {
-  fonts.packages = with upkgs; [
+  fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];
 }

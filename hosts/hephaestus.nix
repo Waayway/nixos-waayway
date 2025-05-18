@@ -10,7 +10,12 @@
   isServer = false;
   isLaptop = false;
 
-  options.desktop.kde.enable = true;
+  options = {
+    desktop = {
+      kde.enable = true;
+    };
+    bluetooth.enable = true;
+  };
 
   config =
     { ... }:

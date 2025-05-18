@@ -2,7 +2,7 @@
   (box :class "bar" :vexpand false :orientation "horizontal" :space-evenly true
     (box :halign "start" :valign "center":vexpand false   :space-evenly false :spacing 7 (launcher) (workspaces))
     (box :halign "center" :valign "center" :hexpand true :vexpand false   :space-evenly false :spacing 7 (music))
-    (box :halign "end" :class "image" :valign "center" :space-evenly false :orientation 'h' :spacing 10 (datetime) (battery) (systray))
+    (box :halign "end" :class "image" :valign "center" :space-evenly false :orientation 'h' :spacing 10 (datetime) (battery) (systemtray))
   )
 )
 
@@ -65,6 +65,10 @@
   "" 
 )
 
+(defwidget systemtray []
+  (systray :class "systray" :spacing 16)
+)
+
 
 
 (defwindow bar
@@ -77,3 +81,4 @@
     :stacking "fg"
     :exclusive true
   (bar))
+

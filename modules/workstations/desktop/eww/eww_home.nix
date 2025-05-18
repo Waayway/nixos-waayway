@@ -1,9 +1,9 @@
-{ upkgs, color, ... }:
+{ pkgs, color, ... }:
 let
   basePath = "modules/workstations/desktop/eww/config";
 in
 {
-  home.packages = with upkgs; [
+  home.packages = with pkgs; [
     eww
     socat
   ];

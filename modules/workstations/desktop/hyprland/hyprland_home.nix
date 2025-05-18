@@ -28,6 +28,7 @@ in
         "hyprpaper"
         "sleep 1 && sh ~/.config/hypr/scripts/wallpaper-random.sh"
         "nm-applet --indicator"
+        "eww open bar"
       ];
 
       bindm = [
