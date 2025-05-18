@@ -17,5 +17,8 @@
     # -- Vector
     inkscape
     figma-linux
+
+    # -- Isos --
+    popsicle
   ];
 }
