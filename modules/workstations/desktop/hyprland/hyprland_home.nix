@@ -14,8 +14,8 @@ in
       "$mod" = "SUPER";
 
       monitor = [
-        "desc:LG Electronics LG ULTRAGEAR 111MAXSP2986,2560x1440@144,0x360,1.0"
-        "desc:Acer Technologies X32Q FS 1414012CC3E00,3840x2160@144,2560x0,2.0,bitdepth,10"
+        "desc:Acer Technologies X32Q FS 1414012CC3E00,3840x2160@143.98,1600x0,2.0,bitdepth,10" # Primary acer 4k 144 monitor
+        "desc:LG Electronics LG ULTRAGEAR 111MAXSP2986,2560x1440@144.0,0x90,1.6" # 2nd lg 1440p monitor
       ];
 
       env = [
