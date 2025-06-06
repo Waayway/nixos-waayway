@@ -37,6 +37,18 @@ in
         "$mod, mouse:273, resizewindow"
       ];
 
+      workspace = [
+        "name:󰝚"
+        "name:󰭹"
+        "name:󰊴"
+      ];
+
+      windowrule = [
+        "workspace name:󰝚, class:^(spotify)$"
+        "workspace name:󰭹, class:^(discord)$"
+        "workspace name:󰊴, class:^(.gamescope-wrapped)$"
+      ];
+
       bind =
         [
           "$mod, Return, exec, wezterm start --always-new-process"
@@ -60,14 +72,6 @@ in
           "$mod, right, movefocus, r"
           "$mod, up, movefocus, u"
           "$mod, down, movefocus, d"
-
-          #  Volume + Brightness control
-          ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-          ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-          ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-
-          ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
-          ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
 
           # Media controls
           ", XF86AudioPlay, exec, playerctl play-pause"
@@ -96,7 +100,22 @@ in
               ]
             ) 10
           )
-        );
+        )
+        ++ [
+          "$mod, S, workspace, name:󰝚"
+          "$mod, D, workspace, name:󰭹"
+          "$mod, G, workspace, name:󰊴"
+        ];
+
+      binde = [
+        #  Volume + Brightness control
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+
+        ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+      ];
 
       input = {
         kb_layout = "us";

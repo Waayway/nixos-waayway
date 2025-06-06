@@ -1,5 +1,4 @@
-(deflisten workspaces :initial "[]" "bash ~/.config/eww/scripts/get-workspaces")
-(deflisten current_workspace :initial "1" "bash ~/.config/eww/scripts/get-active-workspace")
+(deflisten workspaces :initial "{}" "bash ~/.config/eww/scripts/get-workspaces")
 
 (deflisten media :initial "{}" "bash ~/.config/eww/scripts/media-status")
 

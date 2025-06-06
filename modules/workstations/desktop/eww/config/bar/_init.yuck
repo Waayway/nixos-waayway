@@ -1,8 +1,8 @@
 (defwidget bar []
   (box :class "bar" :vexpand false :orientation "horizontal" :space-evenly true
-    (box :halign "start" :valign "center":vexpand false   :space-evenly false :spacing 7 (launcher) (workspaces))
+    (box :halign "start" :valign "center":vexpand false   :space-evenly false :spacing 7 (launcher) (workspaces :workspaces "${workspaces.numbered}"))
     (box :halign "center" :valign "center" :hexpand true :vexpand false   :space-evenly false :spacing 7 (music))
-    (box :halign "end" :class "image" :valign "center" :space-evenly false :orientation 'h' :spacing 10 (box :space-evenly false (datetime) (battery)) (systemtray))
+    (box :halign "end" :class "image" :valign "center" :space-evenly false :orientation 'h' :spacing 10 (box :space-evenly false (workspaces :workspaces "${workspaces.named}")(datetime) (battery)) (systemtray))
   )
 )
 
@@ -10,14 +10,14 @@
   (button :onclick "rofi -show drun" :timeout "15m" (box :class "launcher" " "))
 )
 
-(defwidget workspaces []
+(defwidget workspaces [workspaces]
     (box :orientation "h" :class "workspaces" :space-evenly "false" :halign "center" :spacing 5
-      (label :text "${workspaces}${current_workspace}" :visible false)
-      (for workspace in workspaces
-        (button :onclick "hyprctl dispatch workspace ${workspace.id}" 
+      (label :text "${workspaces}" :visible false)
+      (for workspace in "${workspaces}"
+        (button :onclick "hyprctl dispatch workspace ${workspace.id != "null" ? workspace.id : "name:${workspace.name}" }" 
                 :valign "center"
-                :class "workspace ${workspace.windows > 0 ? "occupied" : "empty"} ${workspace.id == current_workspace ? "current" : ""}"
-              "${workspace.id}"
+                :class "workspace ${workspace.status} ${workspace.id != "null" ? "id" : "name"}"
+              "${workspace.id != "null" ? workspace.id : workspace.name}"
           )
         )
       )
