@@ -1,8 +1,10 @@
 { pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
-    # -- Music --
-    spotify
+
+    # -- Spotify --
+    spotify # Has some issues so spot
+    spot
 
     # -- Recording --
     obs-studio

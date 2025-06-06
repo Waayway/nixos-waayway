@@ -98,17 +98,3 @@
   padding-right: 15px;
 }
 
-.popup {
-  @include rounding;
-  background: $bg;
-  border: $blue5 2px solid;
-  menu {
-    padding: 8px;
-    menuitem {
-      padding: 4px 8px;
-      margin: 3px 0px;
-      border-radius: 8px;
-      background: $bg_sidebar;
-    }
-  }
-}

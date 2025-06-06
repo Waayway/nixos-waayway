@@ -18,6 +18,7 @@
       cat = "bat";
       md = "glow";
       cd = "z";
+      sp = "spotify_player";
     };
     plugins = with pkgs; [
       {

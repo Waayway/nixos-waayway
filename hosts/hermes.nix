@@ -14,6 +14,9 @@
   config =
     { ... }:
     {
+      # Firmware updating service
+      services.fwupd.enable = true;
+
       boot.initrd.kernelModules = [ "amdgpu" ];
       services.xserver.videoDrivers = [ "amdgpu" ];
       boot.initrd.availableKernelModules = [
@@ -25,20 +28,23 @@
         "sd_mod"
       ];
       boot.kernelModules = [ "kvm-amd" ];
-fileSystems."/" =
-    { device = "/dev/disk/by-uuid/13db84b5-d926-4ef0-a236-5505c84b802e";
-      fsType = "ext4";
-    };
+      fileSystems."/" = {
+        device = "/dev/disk/by-uuid/13db84b5-d926-4ef0-a236-5505c84b802e";
+        fsType = "ext4";
+      };
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E60B-51DA";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+      fileSystems."/boot" = {
+        device = "/dev/disk/by-uuid/E60B-51DA";
+        fsType = "vfat";
+        options = [
+          "fmask=0077"
+          "dmask=0077"
+        ];
+      };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/ceb758d5-9c7f-4a89-b5aa-54a6254fc679"; }
-    ];
+      swapDevices = [
+        { device = "/dev/disk/by-uuid/ceb758d5-9c7f-4a89-b5aa-54a6254fc679"; }
+      ];
 
     };
 }

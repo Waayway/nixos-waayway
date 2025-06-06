@@ -6,6 +6,7 @@ in
   home.packages = with pkgs; [
     eww
     socat
+    libnotify
   ];
 
   home.activation.installConfig = ''

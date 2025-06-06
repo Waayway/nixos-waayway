@@ -1,33 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, currentUser, ... }:
 let
-  catpuccin = pkgs.colloid-gtk-theme.override {
-    colorVariants = [ "dark" ];
-    tweaks = [
-      "rimless"
-      "catppuccin"
-    ];
-  };
+  tuigreet = "${pkgs.greetd.tuigreet}/bin/tuigreet";
+  session = "${pkgs.hyprland}/bin/Hyprland";
 in
 {
   # Enable Display Manager
   services.greetd = {
     enable = true;
-  };
+    restart = false;
 
-  programs.regreet = {
-    enable = true;
-
-    theme = {
-      name = "Colloid-Dark-Catppuccin";
-      package = catpuccin;
-    };
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
-    };
-    cursorTheme = {
-      name = "Rose-Pine";
-      package = pkgs.rose-pine-cursor;
+    settings = {
+      initial_session = {
+        command = "${session}";
+        user = "${currentUser.name}";
+      };
+      default_session = {
+        command = "${tuigreet} --greeting 'Welcome to NixOS!' --asterisks --remember --remember-user-session --time --cmd ${session}";
+        user = "greeter";
+      };
     };
   };
 }
