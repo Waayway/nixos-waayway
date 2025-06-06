@@ -29,6 +29,7 @@ in
         "sleep 1 && sh ~/.config/hypr/scripts/wallpaper-random.sh"
         "nm-applet --indicator"
         "eww open bar"
+        "hyprlock"
       ];
 
       bindm = [
@@ -39,6 +40,7 @@ in
 
       bind =
         [
+          "$mod SHIFT, N, exec, swaync-client -t -sw"
           "$mod, Return, exec, wezterm start --always-new-process"
           "$mod, B, exec, firefox"
           "$mod, Space, exec, rofi -show drun -theme ~/.config/rofi/theme.rasi"

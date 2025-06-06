@@ -62,7 +62,7 @@
 )
 
 (defwidget battery []
-  (box :class "battery ${battery.discharging == "true" ? "on-battery" : "on-charger"}" "${battery.percentage}%") 
+  (box :tooltip "${battery.info-text}" :class "battery ${battery.discharging == "true" ? "on-battery" : "on-charger"}" "${battery.percentage}%") 
 )
 
 (defwidget systemtray []
@@ -71,7 +71,7 @@
 
 
 
-(defwindow bar
+(defwindow bar 
     :monitor 0
     :geometry (geometry :x "20px"
       :y "20px"

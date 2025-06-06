@@ -18,7 +18,6 @@
     pavucontrol
 
     ### Other
-    swaynotificationcenter
     networkmanagerapplet
 
     # --Screenshots--
