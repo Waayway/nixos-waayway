@@ -3,6 +3,7 @@
 
   isServer = false;
   isLaptop = true;
+  isFramework = true;
 
   options = {
     desktop = {

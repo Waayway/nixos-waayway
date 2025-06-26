@@ -16,6 +16,7 @@ in
       monitor = [
         "desc:Acer Technologies X32Q FS 1414012CC3E00,3840x2160@143.98,1600x0,2.0,bitdepth,10" # Primary acer 4k 144 monitor
         "desc:LG Electronics LG ULTRAGEAR 111MAXSP2986,2560x1440@144.0,0x90,1.6" # 2nd lg 1440p monitor
+        "desc:Philips Consumer Electronics Company Philips FTV 0x01010101,3840x2160@120.0,1440x0,2.0,bitdepth,10" # Philips tv downstairs
       ];
 
       env = [
@@ -62,6 +63,7 @@ in
           "$mod ALT, S, exec, grim -g \"$(slurp)\""
           "$mod SHIFT, C, exec, hyprpicker | wl-copy"
           "$mod, L, exec, killall wlogout || wlogout -b 2"
+          "$mod SHIFT, L, exec, killall hyprlock"
 
           "$mod, Q, killactive,"
           "$mod, V, togglefloating,"
@@ -99,6 +101,7 @@ in
               [
                 "$mod, ${ws}, workspace, ${toString (x + 1)}"
                 "$mod SHIFT, ${ws}, movetoworkspace, ${toString (x + 1)}"
+                "$mod ALT, ${ws}, movecurrentworkspacetomonitor, ${toString x}"
               ]
             ) 10
           )

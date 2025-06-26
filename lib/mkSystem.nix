@@ -18,6 +18,7 @@ let
   hardware-profiles = machineOptions.hardware-profiles;
   isServer = machineOptions.isServer;
   isLaptop = machineOptions.isLaptop;
+  isFramework = machineOptions.isFramework;
   isLinux = true; # TODO: Darwin
 
   colors = import ./color.nix { };
@@ -38,6 +39,7 @@ let
 
     isServer = isServer;
     isLaptop = isLaptop;
+    isFramework = isFramework;
     isLinux = isLinux;
     hardware-profiles = hardware-profiles;
 

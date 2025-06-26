@@ -2,6 +2,7 @@
 {
   environment.systemPackages = with pkgs; [
     polkit_gnome
+    ipmiview
   ];
 
   security.polkit.enable = true;

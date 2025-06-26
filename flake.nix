@@ -13,6 +13,13 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    fw-fanctrl = {
+      url = "github:TamtamHero/fw-fanctrl/packaging/nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     rofiThemeRepo = {
       url = "github:Murzchnvok/rofi-collection";
       flake = false;
